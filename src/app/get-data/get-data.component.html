@@ -1,0 +1,24 @@
+<div class="container">
+
+    <button class="btn btn-sm btn-primary ml-2 mr-2 mt-4" routerLink="/signup">Signup</button>
+    <button class="btn btn-sm btn-primary pl-4 mt-4" routerLink="/login">login</button>
+    
+<!-- <p *ngFor="let item of data">{{item.name}}</p> -->
+
+<div class="new  mt-4" >
+    <table >
+        <thead > 
+            <th>id</th>
+            <th>names</th>
+            <th>email</th>
+            
+        </thead>
+        <tbody *ngFor="let item of data">
+            <th>{{item.id}}</th>
+            <th>{{item.name}}</th>
+            <th>{{item.email}}</th>
+        </tbody>
+
+    </table>
+</div>
+        </div>

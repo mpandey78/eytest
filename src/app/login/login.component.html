@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="cart-title my-2 text-center">
+                Login Form
+            </div>
+        
+        <div class="col-sm-12 col-md-12 my-2">
+            <input type="text" class="form-control" placeholder="Enter your email id">
+        </div>
+        <div class="col-sm-12 col-md-12 my-2">
+            <input type="password" class="form-control" placeholder="Enter password">
+        </div>
+        <div class="button btn btn-sm btn-primary my-2" routerLink="/home">Submit</div>
+        <div class="button btn-primary btn-sm" (click)="signwithgoogle()">Login with Google</div>
+        <div class="button btn-primary btn-sm" (click)="logout()">LogOut</div>
+        <div class="button btn-primary btn-sm" (click)="signwithfb()">fb login</div>
+        <div class="button btn-primary btn-sm" (click)="logoutfb()">fb login</div>
+
+        
+
+        </div>
+        <div *ngIf="user" class="card text-center">
+            <div class="card-title">{{user.name}}</div>
+            <div class="img-fluid"><img src="{{user.photoUrl}}" alt=""></div>
+            <div class="email">{{user.email}}</div>
+        </div>
+    </div>
+</div>
