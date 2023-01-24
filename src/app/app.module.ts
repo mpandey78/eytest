@@ -16,6 +16,7 @@ import { CrudOperationComponent } from './crud-operation/crud-operation.componen
 import { AddtodoComponent } from './addtodo/addtodo.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { AddtodoComponent } from './addtodo/addtodo.component';
     SignupComponent,
     LoginComponent,
     CrudOperationComponent,
-    AddtodoComponent
+    AddtodoComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,25 @@ import { AddtodoComponent } from './addtodo/addtodo.component';
     SocialLoginModule
   ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('1024993249362-q1grmdjtggsmhecjl59j76go3t7fht7k.apps.googleusercontent.com')
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('561602290896109')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   
   ],
   bootstrap: [AppComponent]

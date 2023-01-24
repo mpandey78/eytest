@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
       this.user=user
     })
   }
-  signwithgoogle():any{
+  signwithgoogle(){
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
   }
   logout(){
